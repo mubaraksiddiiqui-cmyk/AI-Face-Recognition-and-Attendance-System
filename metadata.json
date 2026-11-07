@@ -1,0 +1,6 @@
+{
+  "name": "AI Face Recognition & Attendance System",
+  "description": "Smart biometric face recognition and automated attendance management with real-time face detection, 10-shot registration, and 5-second live monitoring.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,110 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap');
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Google Sans', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #020617;
+  color: #f8fafc;
+  line-height: 24px;
+}
+
+#root {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  z-index: 20;
+  background-color: rgba(2, 6, 23, 0.94);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #090d16;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Biometric scan beam */
+@keyframes scan-sweep {
+  0% {
+    top: 5%;
+    opacity: 0.4;
+  }
+  50% {
+    top: 92%;
+    opacity: 0.9;
+  }
+  100% {
+    top: 5%;
+    opacity: 0.4;
+  }
+}
+
+.animate-scan {
+  animation: scan-sweep 2.8s ease-in-out infinite;
+}
+
+/* Adjust XR Button to float nicely at bottom-right so it doesn't block web UI */
+#XRButtonWrapper {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  top: auto;
+  left: auto;
+  width: auto;
+  height: auto;
+  z-index: 60;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  pointer-events: auto;
+}
+
+#XRButtonWrapper h1 {
+  display: none;
+}
+
+.XRButton {
+  background: linear-gradient(135deg, #0ea5e9 0%, #10b981 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 9999px !important;
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  padding: 10px 20px !important;
+  min-width: 140px !important;
+  box-shadow: 0 4px 20px rgba(14, 165, 233, 0.3) !important;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.XRButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(14, 165, 233, 0.45) !important;
+}
+
+.XRButton::after {
+  width: 18px !important;
+  height: 18px !important;
+  filter: invert(1);
+}
